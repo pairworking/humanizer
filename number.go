@@ -139,6 +139,14 @@ func (n *NumberHumanizer) divide(number int64) string {
 	return bufferRes.String()
 }
 
+//	This function will return the number in human ways (string).
+// 	You can directly call the function for directly use in your code.
+// 	See example below:
+// 		func ExampleNumberToWords() {
+// 			res := NumberToWords(24)
+// 			fmt.Println(res)
+// 			// Output: twenty-four
+// 		}
 func NumberToWords(number int64) string {
 	numHumanizer := NumberHumanizer{}
 	res, _ := numHumanizer.ToWords(number)
