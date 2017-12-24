@@ -1,8 +1,7 @@
-package humanize
+package humanizer
 
 import (
 	"bytes"
-	"errors"
 )
 
 type NumberValidator struct{}
@@ -50,7 +49,12 @@ const (
 )
 
 var (
-	ErrUnsuportedDataType = errors.New("Data type is not supported yet")
+	unitArr = []string{
+		"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen",
+	}
+	tensArr = []string{
+		"zero", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety",
+	}
 )
 
 func (n *NumberHumanizer) ToWords(number int64) (string, error) {
@@ -134,15 +138,6 @@ func (n *NumberHumanizer) divide(number int64) string {
 
 	return bufferRes.String()
 }
-
-var (
-	unitArr = []string{
-		"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen",
-	}
-	tensArr = []string{
-		"zero", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety",
-	}
-)
 
 func NumberToWords(number int64) string {
 	numHumanizer := NumberHumanizer{}

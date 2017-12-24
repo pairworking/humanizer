@@ -1,4 +1,4 @@
-package humanize
+package humanizer
 
 import (
 	"testing"

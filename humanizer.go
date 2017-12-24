@@ -1,4 +1,4 @@
-package humanize
+package humanizer
 
 type Humanize interface {
 	ToWords(interface{}) (string, error)
