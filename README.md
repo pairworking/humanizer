@@ -8,6 +8,8 @@ Humanizing in human ways
 
 ## How to use
 
+See this example below: 
+
 ```go
 
 import "github.com/pairworking/humanizer"
